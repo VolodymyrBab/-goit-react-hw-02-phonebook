@@ -12,11 +12,11 @@ export class ContactForm extends Component {
     const formRef = btnRef.nextSibling;
     // console.log(formRef);
 
-    if (btnRef.textContent === "+") {
+    if (btnRef.textContent === "Add") {
       btnRef.textContent = "x";
       formRef.classList.remove(`${css.visually_hidden}`)
     } else if (btnRef.textContent === "x") {
-      btnRef.textContent = "+";
+      btnRef.textContent = "Add";
       formRef.classList.add(`${css.visually_hidden}`)
     }
   }
@@ -39,7 +39,7 @@ export class ContactForm extends Component {
 
   render() {
     return <div className={css.container}>
-      <button type="button" className={css.btn} onClick={this.toggleForm}>+</button>
+      <button type="button" className={css.btn} onClick={this.toggleForm}>Add</button>
       <form
         className={classNames(css.visually_hidden, css.form)}
         onSubmit={this.addContact}> 

@@ -22,17 +22,17 @@
   }
   
   .btn {
-    width: 36px;
+    width: fit-content;
     appearance: none;
     background-color: #c0f4f0;
-    /* border-radius: 1em; */
+    border-radius: 5px;
     border-style: none;
     /* box-shadow: #bcbfc4 0 -12px 6px inset; */
     box-sizing: border-box;
     color: #241b1b;
     cursor: pointer;
     display: inline-block;
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 700;
     margin: 0;
     margin-left: calc(100% - 40px);
