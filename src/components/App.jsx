@@ -18,23 +18,23 @@ state = {
 
 
 render() {
-  const contacts = this.filteredContacts();
-  const filter = this.state.filter;
+  // const contacts = this.filteredContacts();
+  // const filter = this.state.filter;
   // console.log(contacts);
   return <div className="container">
-    <div className="in_container">
-    <div>
-        <h2 className="title">Phonebook</h2>
-        {/* <Filter onFilterInput={this.onFilterInput} filter={filter} /> */}
-        <ContactForm onAddContact={this.onAddContact}/>
-    </div>
-    <div>
-      <h2 className="title">Contacts</h2>
-        {/* <ContactList contacts={contacts} deleteContact={this.deleteContact} /> */}
+    {/* <div className="in_container"> */}
+      <div>
+          <h2 className="title">Phonebook</h2>
+          {/* <Filter onFilterInput={this.onFilterInput} filter={filter} /> */}
+          <ContactForm onAddContact={this.onAddContact}/>
+      </div>
+      <div>
+        <h2 className="title">Contacts</h2>
+          {/* <ContactList contacts={contacts} deleteContact={this.deleteContact} /> */}
       </div>
     </div>
-    <div className="circle"></div>
-  </div>
+    
+  // </div>
 }
 // export const App = () => {
 //   return (
