@@ -2,6 +2,7 @@ import { Component } from "react";
 import '../../src/index.css';
 import { ContactList } from "./ContList/ContList";
 import { ContactForm } from "./ContForm/ContForm";
+import { Filter } from "./Filter/Filter";
 
 
 
@@ -13,8 +14,8 @@ state = {
     {id: 'id-2', name: 'Steve Jobs', number: '444-99-22'},
     {id: 'id-3', name: 'Stephen Wozniak', number: '645-17-79'},
     {id: 'id-4', name: 'Freddie Mercury', number: '227-91-26'},
-    {id: 'id-3', name: 'Woodrow Wilson', number: '645-17-79'},
-    {id: 'id-4', name: 'Adam Mickiewicz', number: '227-91-26'}],
+    {id: 'id-5', name: 'Woodrow Wilson', number: '645-17-79'},
+    {id: 'id-6', name: 'Adam Mickiewicz', number: '227-91-26'}],
   filter: '',
 }
 
@@ -38,6 +39,10 @@ filteredContacts = () => {
   return filteredContactsArray;
 }
 
+onFilterInput = (value) => {
+  this.setState({ filter: value });
+}
+
 deleteContact = (id) => {
   this.setState(prevState => ({
     contacts: prevState.contacts.filter(contact => contact.id !== id)
@@ -47,13 +52,13 @@ deleteContact = (id) => {
 
 render() {
   const contacts = this.filteredContacts();
-  // const filter = this.state.filter;
+  const filter = this.state.filter;
   // console.log(contacts);
   return <div className="container">
     
     <div>
       <h2 className="title">Phonebook</h2>
-          {/* <Filter onFilterInput={this.onFilterInput} filter={filter} /> */}
+      <Filter onFilterInput={this.onFilterInput} filter={filter} />
       <ContactForm onAddContact={this.onAddContact}/>
     </div>
     <div>
@@ -64,19 +69,5 @@ render() {
     
  
 }
-// export const App = () => {
-//   return (
-//     <div
-//       style={{
-//         height: '100vh',
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         fontSize: 40,
-//         color: '#010101'
-//       }}
-//     >
-//       React homework template
-//     </div>
-//   );
+
 };
