@@ -39,9 +39,12 @@ filteredContacts = () => {
   return filteredContactsArray;
 }
 
-onFilterInput = (value) => {
-  this.setState({ filter: value });
-}
+// onFilterInput = (value) => {
+//   this.setState({ filter: value });
+// }
+changeFilter = filter => {
+  this.setState({ filter: filter.toLowerCase() });
+};
 
 deleteContact = (id) => {
   this.setState(prevState => ({
@@ -52,17 +55,19 @@ deleteContact = (id) => {
 
 render() {
   const contacts = this.filteredContacts();
-  const filter = this.state.filter;
+  
   // console.log(contacts);
   return <div className="container">
     
     <div>
       <h2 className="title">Phonebook</h2>
-      <Filter onFilterInput={this.onFilterInput} filter={filter} />
+      {/* <Filter onFilterInput={this.onFilterInput} filter={filter} /> */}
+      <Filter onChange={this.changeFilter} />
       <ContactForm onAddContact={this.onAddContact}/>
     </div>
     <div>
       <h2 className="title">Contacts</h2>
+
       <ContactList contacts={contacts} deleteContact={this.deleteContact} />
     </div>
   </div>

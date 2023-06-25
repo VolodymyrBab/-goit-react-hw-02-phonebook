@@ -4,20 +4,21 @@ import PropTypes from 'prop-types';
 
 
 export const Contact = ({ contact, onDelete }) => {
+  const {id, name, number} = contact;
   return <>
      <li className={css.item} onClick={showDetail}>
       <div className={css.contact}>
-        <p className={css.name}>{contact.name}</p>
+        <p className={css.name}>{name}</p>
         <p
-          name={contact.name}
+          name={name}
           className={classNames(css.number, css.visually_hidden)}>
-          {contact.number}
+          {number}
         </p>
       </div>
       <button 
         type="button" 
         className={classNames(css.btn, css.visually_hidden)} 
-        onClick={() => onDelete(contact.id)}
+        onClick={() => onDelete(id)}
       >
         delete
       </button>
